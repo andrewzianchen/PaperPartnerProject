@@ -4,6 +4,12 @@ import { SegmentedButtons } from "react-native-paper";
 
 const MyComponent = () => {
   const [value, setValue] = React.useState("");
+  const [background, setBackground] = React.useState<string>("");
+
+  const changeBackground = ({color}) => {
+    setBackground(color),
+  };
+  
 
   return (
     <SafeAreaView style={styles.container}>
@@ -12,16 +18,24 @@ const MyComponent = () => {
         onValueChange={setValue}
         buttons={[
           {
-            value: "walk",
-            label: "Walking",
+            value: "pink",
+            label: "Pink",
             style: styles.buttonStyle,
           },
           {
-            value: "train",
-            label: "Transit",
+            value: "green",
+            label: "Green",
             style: styles.buttonStyle,
           },
-          { value: "drive", label: "Driving", style: styles.buttonStyle },
+          { value: "orange", 
+            label: "Orange", 
+            style: styles.buttonStyle, 
+          },
+          {
+            value: 'blue',
+            label: 'Blue',
+            style: styles.buttonStyle,
+          },
         ]}
       />
     </SafeAreaView>
