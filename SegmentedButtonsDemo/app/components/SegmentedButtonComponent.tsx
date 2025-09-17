@@ -2,15 +2,22 @@ import * as React from "react";
 import { SafeAreaView, StyleSheet } from "react-native";
 import { SegmentedButtons } from "react-native-paper";
 
-const MyComponent = () => {
+type propsType ={
+  background: string;
+  onChangeBackground: (next: string) => void;
+}
+
+const SegmentedButtonComponent: React.FC<propsType> = ({
+  background,
+  onChangeBackground,
+}) => {
   const [value, setValue] = React.useState("");
-  const [background, setBackground] = React.useState<string>("");
 
-  const changeBackground = ({color}) => {
-    setBackground(color),
-  };
-  
+  const handleBackground = (color: string) => {
+    onChangeBackground(color);
+    setValue(color);
 
+  }
   return (
     <SafeAreaView style={styles.container}>
       <SegmentedButtons
@@ -21,6 +28,7 @@ const MyComponent = () => {
             value: "pink",
             label: "Pink",
             style: styles.buttonStyle,
+            
           },
           {
             value: "green",
@@ -53,4 +61,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default MyComponent;
+export default SegmentedButtonComponent;
