@@ -8,7 +8,7 @@ type propsType ={
 }
 
 const SegmentedButtonComponent: React.FC<propsType> = ({
-  background,
+  //background,
   onChangeBackground,
 }) => {
   const [value, setValue] = React.useState("");
@@ -22,30 +22,30 @@ const SegmentedButtonComponent: React.FC<propsType> = ({
     <SafeAreaView style={styles.container}>
       <SegmentedButtons
         value={value}
-        onValueChange={setValue}
+        onValueChange={handleBackground}
         buttons={[
-          {
-            value: "pink",
-            label: "Pink",
-            style: styles.buttonStyle,
-            
-          },
-          {
-            value: "green",
-            label: "Green",
-            style: styles.buttonStyle,
-          },
-          { value: "orange", 
-            label: "Orange", 
-            style: styles.buttonStyle, 
-          },
-          {
-            value: 'blue',
-            label: 'Blue',
-            style: styles.buttonStyle,
-          },
-        ]}
-      />
+        { 
+          value: "pink",
+          label: "Pink",
+          style: styles.buttonStyle
+        },
+        { 
+          value: "green", 
+          label: "Green", 
+          style: styles.buttonStyle 
+        },
+        { 
+          value: "orange",
+          label: "Orange",
+          style: styles.buttonStyle 
+        },
+        { 
+          value: "blue",
+          label: "Blue", 
+          style: styles.buttonStyle 
+        },
+  ]}
+  />
     </SafeAreaView>
   );
 };
