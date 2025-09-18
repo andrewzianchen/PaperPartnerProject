@@ -2,64 +2,46 @@ import * as React from "react";
 import { SafeAreaView, StyleSheet } from "react-native";
 import { SegmentedButtons } from "react-native-paper";
 
-<<<<<<< Updated upstream
-const MyComponent = () => {
-=======
-type propsType ={
+type propsType = {
   background: string;
   onChangeBackground: (next: string) => void;
-}
+};
 
 const SegmentedButtonComponent: React.FC<propsType> = ({
   onChangeBackground,
 }) => {
->>>>>>> Stashed changes
   const [value, setValue] = React.useState("");
+
+  const handleBackground = (color: string) => {
+    onChangeBackground(color);
+    setValue(color);
+  };
 
   return (
     <SafeAreaView style={styles.container}>
-      <SegmentedButtons style = {styles.buttonStyle}
+      <SegmentedButtons
+        style={styles.buttonStyle}
         value={value}
-        onValueChange={setValue}
+        onValueChange={handleBackground}
         buttons={[
-<<<<<<< Updated upstream
           {
-            value: "walk",
-            label: "Walking",
-            style: styles.buttonStyle,
+            value: "pink",
+            label: "Pink",
           },
           {
-            value: "train",
-            label: "Transit",
-            style: styles.buttonStyle,
+            value: "green",
+            label: "Green",
           },
-          { value: "drive", label: "Driving", style: styles.buttonStyle },
+          {
+            value: "orange",
+            label: "Orange",
+          },
+          {
+            value: "blue",
+            label: "Blue",
+          },
         ]}
       />
-=======
-        { 
-          value: "pink",
-          label: "Pink",
-        
-        },
-        { 
-          value: "green", 
-          label: "Green", 
-          
-        },
-        { 
-          value: "orange",
-          label: "Orange",
-         
-        },
-        { 
-          value: "blue",
-          label: "Blue", 
-    
-        },
-  ]}
-  />
->>>>>>> Stashed changes
     </SafeAreaView>
   );
 };
@@ -76,4 +58,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default MyComponent;
+export default SegmentedButtonComponent;

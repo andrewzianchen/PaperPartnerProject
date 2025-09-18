@@ -1,37 +1,43 @@
+import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import SegmentedButtonComponent from "./components/SegmentedButtonComponent";
 
 export default function Index() {
+  const [background, setBackground] = React.useState<string>("");
+  const changeBackground = (color: string) => {
+    setBackground(color);
+  };
+
   return (
     <View style={styles.container}>
-      <SegmentedButtonComponent />
-      <Text>Edit app/index.tsx to edit this screen.</Text>
+      <Text style={styles.text}>
+        Click the buttons to change the color of the box!
+      </Text>
+      <SegmentedButtonComponent
+        background={background}
+        onChangeBackground={changeBackground}
+      />
+      <View style={[styles.box, { backgroundColor: background }]} />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-<<<<<<< Updated upstream
-=======
-  text:{
+  text: {
     fontSize: 30,
     marginTop: 30,
     fontWeight: "bold",
-    textAlign: "center"
+    textAlign: "center",
   },
->>>>>>> Stashed changes
   container: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
   },
-<<<<<<< Updated upstream
-=======
   box: {
     width: 350,
     height: 350,
     borderWidth: 2,
     marginBottom: 100,
   },
->>>>>>> Stashed changes
 });
