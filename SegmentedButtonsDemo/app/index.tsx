@@ -11,9 +11,27 @@ export default function Index() {
 }
 
 const styles = StyleSheet.create({
+<<<<<<< Updated upstream
+=======
+  text:{
+    fontSize: 30,
+    marginTop: 30,
+    fontWeight: "bold",
+    textAlign: "center"
+  },
+>>>>>>> Stashed changes
   container: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
   },
+<<<<<<< Updated upstream
+=======
+  box: {
+    width: 350,
+    height: 350,
+    borderWidth: 2,
+    marginBottom: 100,
+  },
+>>>>>>> Stashed changes
 });
